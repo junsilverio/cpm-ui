@@ -1,1 +1,165 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles for BuildPro Construction & Project Management */
+
+/* Root Variables */
+:root {
+  --primary-color: #2E5C9A;
+  --secondary-color: #4A90E2;
+  --success-color: #27AE60;
+  --warning-color: #F39C12;
+  --danger-color: #E74C3C;
+  --info-color: #3498DB;
+  --purple-color: #9B59B6;
+  --teal-color: #1ABC9C;
+  --dark-bg: #2C3E50;
+  --sidebar-bg: #1E2A38;
+  --card-bg: #FFFFFF;
+  --border-color: #E0E0E0;
+  --text-primary: #2C3E50;
+  --text-secondary: #7F8C8D;
+  --shadow: 0 2px 8px rgba(0,0,0,0.1);
+  --sidebar-width: 280px;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F5F7FA;
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Card Styles */
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  .card-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      i {
+        color: var(--secondary-color);
+      }
+    }
+
+    .total-badge {
+      background: var(--secondary-color);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+}
+
+/* Chart Styles */
+.chart-container {
+  position: relative;
+  height: 250px;
+  margin-bottom: 15px;
+
+  canvas {
+    max-height: 100%;
+  }
+}
+
+.chart-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+
+    .legend-label {
+      color: var(--text-secondary);
+    }
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.updating {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive Utilities */
+@media (max-width: 1200px) {
+  :root {
+    --sidebar-width: 260px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --sidebar-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+.my-tasks {
+  .tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    .task-item {
+      text-align: center;
+      padding: 15px;
+      background: #F5F7FA;
+      border-radius: 8px;
+
+      .task-status {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .task-count {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+    }
+  }
+}

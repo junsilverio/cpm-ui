@@ -1,1 +1,98 @@
-<p>dashboard works!</p>
+<p><div class="dashboard-container" [class.sidebar-active]="sidebarActive">
+  <app-sidebar (menuToggle)="toggleSidebar()"></app-sidebar>
+  
+  <div class="main-content">
+    <app-header (menuToggle)="toggleSidebar()"></app-header>
+    
+    <div class="dashboard-content">
+      <!-- Metrics Row -->
+      <div class="metrics-grid">
+        <app-metric-card
+          icon="folder"
+          title="Total Projects"
+          [value]="metrics.totalProjects"
+          change="+2 this month"
+          changeType="positive"
+          color="#4A90E2">
+        </app-metric-card>
+        
+        <app-metric-card
+          icon="chart-line"
+          title="Overall Progress"
+          [value]="metrics.overallProgress + '%'"
+          change="+5%"
+          changeType="positive"
+          color="#27AE60">
+        </app-metric-card>
+        
+        <app-metric-card
+          icon="dollar-sign"
+          title="Total Budget"
+          [value]="'$' + metrics.totalBudget + 'M'"
+          change="On track"
+          changeType="neutral"
+          color="#9B59B6">
+        </app-metric-card>
+        
+        <app-metric-card
+          icon="money-bill-wave"
+          title="Total Cost"
+          [value]="'$' + metrics.totalCost + 'M'"
+          change="-2% under budget"
+          changeType="positive"
+          color="#F39C12">
+        </app-metric-card>
+        
+        <app-metric-card
+          icon="exclamation-triangle"
+          title="Open Issues"
+          [value]="metrics.openIssues"
+          change="+4 today"
+          changeType="negative"
+          color="#E74C3C">
+        </app-metric-card>
+        
+        <app-metric-card
+          icon="clock"
+          title="Overdue Tasks"
+          [value]="metrics.overdueTasks"
+          change="-2 resolved"
+          changeType="positive"
+          color="#E67E22">
+        </app-metric-card>
+      </div>
+
+      <!-- Main Dashboard Grid -->
+      <div class="dashboard-grid">
+        <!-- Left Column -->
+        <div class="dashboard-left">
+          <app-project-status-chart></app-project-status-chart>
+          <app-project-timeline></app-project-timeline>
+          <app-budget-chart></app-budget-chart>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="dashboard-middle">
+          <app-recent-activities></app-recent-activities>
+          <app-alerts></app-alerts>
+          <app-weather-widget></app-weather-widget>
+        </div>
+
+        <!-- Right Column -->
+        <div class="dashboard-right">
+          <app-cost-breakdown></app-cost-breakdown>
+          <app-resource-utilization></app-resource-utilization>
+          <app-documents></app-documents>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="dashboard-bottom">
+        <app-quick-actions></app-quick-actions>
+        <app-integrations></app-integrations>
+        <app-my-tasks></app-my-tasks>
+        <app-project-phases></app-project-phases>
+      </div>
+    </div>
+  </div>
+</div></p>
