@@ -1,0 +1,96 @@
+.project-timeline {
+  .timeline-header {
+    margin-bottom: 15px;
+
+    .timeline-months {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 0 200px 0 0;
+
+      .timeline-month {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-align: center;
+      }
+    }
+  }
+
+  .timeline-content {
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+      align-items: center;
+
+      .timeline-project {
+        .timeline-project-name {
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--text-primary);
+        }
+
+        .timeline-project-type {
+          font-size: 12px;
+          color: var(--text-secondary);
+        }
+      }
+
+      .timeline-bar-container {
+        position: relative;
+        height: 40px;
+        background: #F5F7FA;
+        border-radius: 4px;
+
+        .timeline-bar {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 24px;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+
+          .timeline-bar-progress {
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+          }
+        }
+
+        .today-marker {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background: var(--danger-color);
+          z-index: 2;
+        }
+
+        .today-label {
+          position: absolute;
+          top: -20px;
+          transform: translateX(-50%);
+          font-size: 11px;
+          font-weight: 600;
+          color: var(--danger-color);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .project-timeline {
+    .timeline-content .timeline-item {
+      grid-template-columns: 1fr;
+      gap: 10px;
+
+      .timeline-bar-container {
+        margin-left: 0;
+      }
+    }
+  }
+}

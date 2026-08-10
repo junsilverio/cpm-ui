@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildPro - Construction & Project Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fas fa-building"></i>
+            <div class="logo-text">
+                <h2>BuildPro</h2>
+                <p>Construction & Project Management</p>
+            </div>
+        </div>
+
+        <nav class="main-navigation">
+            <h4>MAIN NAVIGATION</h4>
+            <ul>
+                <li class="active">
+                    <a href="#dashboard">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                        <span class="badge">6</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects">
+                        <i class="fas fa-folder"></i>
+                        <span>Projects</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tasks">
+                        <i class="fas fa-tasks"></i>
+                        <span>Tasks & Schedule</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#resources">
+                        <i class="fas fa-users"></i>
+                        <span>Resources</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#documents">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Documents</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#budget">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Budget & Costs</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contracts">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Contracts</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#procurement">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Procurement</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#site">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Site Management</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#quality">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Quality & Safety</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#reports">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports & Analytics</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <h4>SYSTEM</h4>
+            <ul>
+                <li>
+                    <a href="#users">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Users & Roles</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#integrations">
+                        <i class="fas fa-plug"></i>
+                        <span>Integrations</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#audit">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Audit Logs</span>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="active-project">
+            <h4>ACTIVE PROJECT</h4>
+            <div class="project-info">
+                <h3>Skyline Towers</h3>
+                <p>Residential Complex</p>
+                <div class="progress-info">
+                    <span>72%</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 72%"></div>
+                    </div>
+                </div>
+                <button class="btn-switch">Switch Project</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Dashboard</h1>
+            <div class="header-right">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search projects, tasks, documents...">
+                </div>
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span>
+                    </button>
+                    <button class="messages-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">5</span>
+                    </button>
+                    <button class="help-btn">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name">John Project Manager</span>
+                            <span class="user-role">Project Manager</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <div class="dashboard-title">
+                <h2>CONSTRUCTION & PROJECT MANAGEMENT DASHBOARD</h2>
+            </div>
+
+            <!-- Key Metrics Section -->
+            <section class="section-header">
+                <h3>PROJECT OVERVIEW & KEY METRICS</h3>
+            </section>
+
+            <div class="metrics-grid">
+                <div class="metric-card blue">
+                    <div class="metric-content">
+                        <div class="metric-info">
+                            <h4>Total Projects</h4>
+                            <h2>24</h2>
+                            <p>Active Projects</p>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card green">
+                    <div class="metric-content">
+                        <div class="metric-info">
+                            <h4>Overall Progress</h4>
+                            <h2>72%</h2>
+                            <p>+5% from last month</p>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card orange">
+                    <div class="metric-content">
+                        <div class="metric-info">
+                            <h4>Total Budget</h4>
+                            <h2>$24.8M</h2>
+                            <p>Budget Allocated</p>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card purple">
+                    <div class="metric-content">
+                        <div class="metric-info">
+                            <h4>Total Cost</h4>
+                            <h2>$18.6M</h2>
+                            <p>74.9% of Budget</p>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card yellow">
+                    <div class="metric-content">
+                        <div class="metric-info">
+                            <h4>Open Issues</h4>
+                            <h2>32</h2>
+                            <p>Requires Attention</p>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card teal">
+                    <div class="metric-content">
+                        <div class="metric-info">
+                            <h4>Overdue Tasks</h4>
+                            <h2>18</h2>
+                            <p>Need Immediate Action</p>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and Timeline Section -->
+            <div class="charts-row">
+                <!-- Projects Status Overview -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>PROJECTS STATUS OVERVIEW</h3>
+                    </div>
+                    <div class="card-content">
+                        <canvas id="projectStatusChart"></canvas>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color green"></span>
+                                <span>On Track - 12 (50%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color yellow"></span>
+                                <span>At Risk - 6 (25%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color red"></span>
+                                <span>Delayed - 4 (17%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color blue"></span>
+                                <span>Completed - 2 (8%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Timeline -->
+                <div class="chart-card timeline-card">
+                    <div class="card-header">
+                        <h3>PROJECTS TIMELINE</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="timeline-header">
+                            <div class="timeline-label">Project Name</div>
+                            <div class="timeline-months">
+                                <span>May 2025</span>
+                                <span>Jun 2025</span>
+                                <span>Jul 2025</span>
+                                <span>Aug 2025</span>
+                            </div>
+                        </div>
+                        <div class="timeline-items" id="timelineItems">
+                            <!-- Timeline items will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="chart-card activities-card">
+                    <div class="card-header">
+                        <h3>RECENT ACTIVITIES</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="activities-list" id="activitiesList">
+                            <!-- Activities will be generated by JavaScript -->
+                        </div>
+                        <button class="btn-view-all">View All Activities</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions and Alerts Section -->
+            <div class="action-row">
+                <!-- Quick Actions -->
+                <div class="quick-actions-card">
+                    <div class="card-header">
+                        <h3>QUICK ACTIONS</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-actions-grid">
+                            <button class="action-btn blue">
+                                <i class="fas fa-building"></i>
+                                <span>New Project</span>
+                            </button>
+                            <button class="action-btn green">
+                                <i class="fas fa-check-square"></i>
+                                <span>Create Task</span>
+                            </button>
+                            <button class="action-btn purple">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Document</span>
+                            </button>
+                            <button class="action-btn orange">
+                                <i class="fas fa-users"></i>
+                                <span>Add Resource</span>
+                            </button>
+                            <button class="action-btn teal">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Create Report</span>
+                            </button>
+                            <button class="action-btn red">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Site Inspection</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alerts & Notifications -->
+                <div class="alerts-card">
+                    <div class="card-header">
+                        <h3>ALERTS & NOTIFICATIONS</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="alerts-list" id="alertsList">
+                            <!-- Alerts will be generated by JavaScript -->
+                        </div>
+                        <button class="btn-view-all">View All Alerts</button>
+                    </div>
+                </div>
+
+                <!-- Weather & Site Conditions -->
+                <div class="weather-card">
+                    <div class="card-header">
+                        <h3>WEATHER & SITE CONDITIONS</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="weather-main">
+                            <div class="weather-icon">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <div class="weather-temp">
+                                <h2>25°C</h2>
+                                <p>Partly Cloudy</p>
+                                <p>Humidity: 65%</p>
+                            </div>
+                        </div>
+                        <div class="weather-forecast">
+                            <div class="forecast-day">
+                                <span>Wed</span>
+                                <i class="fas fa-sun"></i>
+                                <span>26°C</span>
+                            </div>
+                            <div class="forecast-day">
+                                <span>Thu</span>
+                                <i class="fas fa-cloud"></i>
+                                <span>24°C</span>
+                            </div>
+                            <div class="forecast-day">
+                                <span>Fri</span>
+                                <i class="fas fa-cloud-sun"></i>
+                                <span>22°C</span>
+                            </div>
+                            <div class="forecast-day">
+                                <span>Sat</span>
+                                <i class="fas fa-cloud-rain"></i>
+                                <span>23°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Budget and Cost Section -->
+            <div class="budget-row">
+                <!-- Budget vs Actual -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>BUDGET VS ACTUAL</h3>
+                    </div>
+                    <div class="card-content">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Cost Breakdown -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>COST BREAKDOWN</h3>
+                    </div>
+                    <div class="card-content">
+                        <canvas id="costBreakdownChart"></canvas>
+                        <div class="cost-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #4A90E2;"></span>
+                                <span>Labor - 35.4%</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #F5A623;"></span>
+                                <span>Materials - 28.7%</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #E74C3C;"></span>
+                                <span>Equipment - 15.3%</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #9B59B6;"></span>
+                                <span>Subcontractors - 12.1%</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #95A5A6;"></span>
+                                <span>Other - 8.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Utilization -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>RESOURCE UTILIZATION</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="resource-items">
+                            <div class="resource-item">
+                                <div class="resource-info">
+                                    <h4>Labor</h4>
+                                    <span>78%</span>
+                                </div>
+                                <div class="circular-progress" data-progress="78">
+                                    <svg>
+                                        <circle cx="50" cy="50" r="45"></circle>
+                                        <circle cx="50" cy="50" r="45" style="stroke-dasharray: 283; stroke-dashoffset: 62;"></circle>
+                                    </svg>
+                                    <span class="progress-value">78%</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-info">
+                                    <h4>Equipment</h4>
+                                    <span>65%</span>
+                                </div>
+                                <div class="circular-progress" data-progress="65">
+                                    <svg>
+                                        <circle cx="50" cy="50" r="45"></circle>
+                                        <circle cx="50" cy="50" r="45" style="stroke-dasharray: 283; stroke-dashoffset: 99;"></circle>
+                                    </svg>
+                                    <span class="progress-value">65%</span>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-info">
+                                    <h4>Materials</h4>
+                                    <span>82%</span>
+                                </div>
+                                <div class="circular-progress" data-progress="82">
+                                    <svg>
+                                        <circle cx="50" cy="50" r="45"></circle>
+                                        <circle cx="50" cy="50" r="45" style="stroke-dasharray: 283; stroke-dashoffset: 51;"></circle>
+                                    </svg>
+                                    <span class="progress-value">82%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-view-all">View All Resources</button>
+                    </div>
+                </div>
+
+                <!-- Documents Overview -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>DOCUMENTS OVERVIEW</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Total Documents</span>
+                                <span class="doc-count">1,247</span>
+                            </div>
+                            <div class="document-item">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <span>Drawings</span>
+                                <span class="doc-count">342</span>
+                            </div>
+                            <div class="document-item">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Reports</span>
+                                <span class="doc-count">456</span>
+                            </div>
+                            <div class="document-item">
+                                <i class="fas fa-file-contract"></i>
+                                <span>Contracts</span>
+                                <span class="doc-count">198</span>
+                            </div>
+                            <div class="document-item">
+                                <i class="fas fa-image"></i>
+                                <span>Photos</span>
+                                <span class="doc-count">251</span>
+                            </div>
+                        </div>
+                        <button class="btn-view-all">View All Documents</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-row">
+                <!-- Integrations & Connectors -->
+                <div class="integrations-card">
+                    <div class="card-header">
+                        <h3>INTEGRATIONS & CONNECTORS</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="integrations-grid">
+                            <div class="integration-item">
+                                <i class="fab fa-autoprefixer" style="color: #E53935;"></i>
+                                <span>AutoCAD</span>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fab fa-rev" style="color: #0696D7;"></i>
+                                <span>Revit</span>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fab fa-product-hunt" style="color: #D32F2F;"></i>
+                                <span>Primavera</span>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fas fa-file-excel" style="color: #107C41;"></i>
+                                <span>MS Project</span>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fab fa-dropbox" style="color: #0061FF;"></i>
+                                <span>Dropbox</span>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fab fa-microsoft" style="color: #00A4EF;"></i>
+                                <span>SharePoint</span>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fas fa-cloud" style="color: #FFC107;"></i>
+                                <span>Power BI</span>
+                            </div>
+                            <div class="integration-item">
+                                <i class="fab fa-microsoft" style="color: #0078D4;"></i>
+                                <span>OneDrive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Tasks Summary -->
+                <div class="tasks-summary-card">
+                    <div class="card-header">
+                        <h3>MY TASKS SUMMARY</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="tasks-summary-grid">
+                            <div class="task-stat pending">
+                                <h2>12</h2>
+                                <p>Pending</p>
+                            </div>
+                            <div class="task-stat progress">
+                                <h2>8</h2>
+                                <p>In Progress</p>
+                            </div>
+                            <div class="task-stat review">
+                                <h2>3</h2>
+                                <p>Review</p>
+                            </div>
+                            <div class="task-stat completed">
+                                <h2>15</h2>
+                                <p>Completed</p>
+                            </div>
+                        </div>
+                        <button class="btn-view-all">View All Tasks</button>
+                    </div>
+                </div>
+
+                <!-- Project Phase Distribution -->
+                <div class="phase-card">
+                    <div class="card-header">
+                        <h3>PROJECT PHASE DISTRIBUTION</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="phase-flow">
+                            <div class="phase-item">
+                                <h4>Planning</h4>
+                                <p>4 Projects</p>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="phase-item">
+                                <h4>Design</h4>
+                                <p>6 Projects</p>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="phase-item">
+                                <h4>Procurement</h4>
+                                <p>5 Projects</p>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="phase-item">
+                                <h4>Construction</h4>
+                                <p>7 Projects</p>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="phase-item">
+                                <h4>Closeout</h4>
+                                <p>2 Projects</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="dashboard-footer">
+                <p>© 2025 BuildPro Construction & Project Management System. All rights reserved.</p>
+                <p>Version 1.0.0</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.weather-widget {
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+    .weather-day {
+      text-align: center;
+      padding: 15px;
+      background: #F5F7FA;
+      border-radius: 8px;
+
+      .weather-day-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+      }
+
+      .weather-icon {
+        font-size: 32px;
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+      }
+
+      .weather-temp {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 5px;
+      }
+
+      .weather-condition {
+        font-size: 11px;
+        color: var(--text-secondary);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .weather-widget .weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

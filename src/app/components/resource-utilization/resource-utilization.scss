@@ -1,0 +1,60 @@
+.resource-utilization {
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .resource-item {
+      text-align: center;
+
+      .resource-circle {
+        margin-bottom: 10px;
+
+        .circular-chart {
+          display: block;
+          margin: 0 auto;
+          max-width: 100px;
+          max-height: 100px;
+        }
+
+        .circle-bg {
+          fill: none;
+          stroke: #F5F7FA;
+          stroke-width: 3.8;
+        }
+
+        .circle {
+          fill: none;
+          stroke-width: 2.8;
+          stroke-linecap: round;
+          animation: progress 1s ease-out forwards;
+        }
+
+        .percentage {
+          font-size: 8px;
+          font-weight: 700;
+          fill: var(--text-primary);
+          text-anchor: middle;
+        }
+      }
+
+      .resource-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+    }
+  }
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@media (max-width: 768px) {
+  .resource-utilization .resources-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

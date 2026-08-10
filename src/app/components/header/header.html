@@ -1,0 +1,48 @@
+<p><header class="header">
+  <div class="header-left">
+    <button class="menu-toggle" (click)="onMenuToggle()" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="header-title">
+      <h1>Dashboard Overview</h1>
+      <p class="header-subtitle">Construction & Project Management
+    </div>
+  </div>
+
+  <div class="header-right">
+    <div class="header-datetime">
+      <div class="header-time">{{ currentTime }}</div>
+      <div class="header-date">{{ currentDate }}</div>
+    </div>
+    
+    <div class="header-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search projects, tasks, documents...">
+    </div>
+
+    <div class="header-actions">
+      <button class="header-icon-btn" title="Notifications">
+        <i class="fas fa-bell"></i>
+        <span class="notification-badge">5</span>
+      </button>
+      <button class="header-icon-btn" title="Messages">
+        <i class="fas fa-envelope"></i>
+        <span class="notification-badge">3</span>
+      </button>
+      <button class="header-icon-btn" title="Settings">
+        <i class="fas fa-cog"></i>
+      </button>
+    </div>
+
+    <div class="header-user">
+      <div class="user-avatar">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="user-info">
+        <div class="user-name">John Doe</div>
+        <div class="user-role">Project Manager</div>
+      </div>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+</header>

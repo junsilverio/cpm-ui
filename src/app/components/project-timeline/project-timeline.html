@@ -1,0 +1,33 @@
+<p><div class="card project-timeline">
+  <div class="card-header">
+    <h3><i class="fas fa-calendar-alt"></i> Project Timeline</h3>
+  </div>
+  <div class="card-body">
+    <div class="timeline-header">
+      <div class="timeline-months">
+        <div class="timeline-month">May</div>
+        <div class="timeline-month">June</div>
+        <div class="timeline-month">July</div>
+        <div class="timeline-month">August</div>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="timeline-item" *ngFor="let project of projects; let isFirst = first">
+        <div class="timeline-project">
+          <div class="timeline-project-name">{{ project.name }}</div>
+          <div class="timeline-project-type">{{ project.type }}</div>
+        </div>
+        <div class="timeline-bar-container">
+          <div class="timeline-bar" 
+               [style.left]="calculateBarPosition(project).left" 
+               [style.width]="calculateBarPosition(project).width"
+               [style.background]="project.color">
+            <div class="timeline-bar-progress" [style.width]="project.progress + '%'"></div>
+          </div>
+          <div class="today-marker" *ngIf="isFirst" [style.left]="getTodayPosition()"></div>
+          <div class="today-label" *ngIf="isFirst" [style.left]="getTodayPosition()">Today</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

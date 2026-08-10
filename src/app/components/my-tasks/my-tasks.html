@@ -1,0 +1,15 @@
+<p><div class="card my-tasks">
+  <div class="card-header">
+    <h3><i class="fas fa-clipboard-list"></i> My Tasks Summary</h3>
+  </div>
+  <div class="card-body">
+    <div class="tasks-grid">
+      <div class="task-item" *ngFor="let task of tasks">
+        <div class="task-status" [style.background]="getColorForStatus(task.status)">
+          {{ getStatusLabel(task.status) }}
+        </div>
+        <div class="task-count">{{ task.count }}</div>
+      </div>
+    </div>
+  </div>
+</div>

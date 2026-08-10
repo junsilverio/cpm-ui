@@ -1,0 +1,13 @@
+<p><div class="card quick-actions">
+  <div class="card-header">
+    <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+  </div>
+  <div class="card-body">
+    <div class="actions-grid">
+      <button class="action-btn" *ngFor="let action of actions" (click)="onActionClick(action)" [style.border-color]="action.color">
+        <i class="fas fa-{{ action.icon }}" [style.color]="action.color"></i>
+        <span>{{ action.label }}</span>
+      </button>
+    </div>
+  </div>
+</div>

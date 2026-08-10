@@ -1,0 +1,35 @@
+<p><aside class="sidebar" [class.collapsed]="isCollapsed">
+  <div class="logo">
+    <i class="fas fa-building"></i>
+    <div class="logo-text">
+      <h2>BuildPro</h2>
+      <p>Construction & PM
+    </div>
+  </div>
+
+  <nav class="main-navigation">
+    <h4>MAIN NAVIGATION</h4>
+    <ul>
+      <li *ngFor="let item of menuItems" [class.active]="item.active">
+        <a [href]="item.route">
+          <i class="fas fa-{{ item.icon }}"></i>
+          <span>{{ item.label }}</span>
+          <span class="badge" *ngIf="item.badge">{{ item.badge }}</span>
+          <i class="fas fa-chevron-right arrow" *ngIf="item.arrow"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="user-info">
+      <div class="user-avatar">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="user-details">
+        <div class="user-name">John Doe</div>
+        <div class="user-role">Project Manager</div>
+      </div>
+    </div>
+  </div>
+</aside>
