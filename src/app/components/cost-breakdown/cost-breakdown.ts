@@ -1,8 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Chart, ChartConfiguration, registerables } from 'chart.js';
+import { Chart, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js';
 
-Chart.register(...registerables);
+Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
 
 @Component({
   selector: 'app-cost-breakdown',
@@ -22,7 +22,7 @@ export class CostBreakdown implements AfterViewInit {
     const ctx = this.chartCanvas.nativeElement.getContext('2d');
     if (!ctx) return;
 
-    const config: ChartConfiguration = {
+    const config: any = {
       type: 'doughnut',
       data: {
         labels: ['Labor', 'Materials', 'Equipment', 'Subcontractors', 'Other'],
@@ -42,7 +42,7 @@ export class CostBreakdown implements AfterViewInit {
           },
           tooltip: {
             callbacks: {
-              label: (context) => {
+              label: (context: any) => {
                 const label = context.label || '';
                 const value = context.parsed || 0;
                 return `${label}: ${value}%`;
@@ -53,7 +53,7 @@ export class CostBreakdown implements AfterViewInit {
       },
       plugins: [{
         id: 'centerText',
-        beforeDraw: (chart) => {
+        beforeDraw: (chart: any) => {
           const ctx = chart.ctx;
           ctx.save();
           const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;

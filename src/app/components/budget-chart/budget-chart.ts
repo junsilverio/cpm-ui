@@ -1,8 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Chart, ChartConfiguration, registerables } from 'chart.js';
+import { Chart, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 
-Chart.register(...registerables);
+Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 @Component({
   selector: 'app-budget-chart',
@@ -22,7 +22,7 @@ export class BudgetChart implements AfterViewInit {
     const ctx = this.chartCanvas.nativeElement.getContext('2d');
     if (!ctx) return;
 
-    const config: ChartConfiguration = {
+    const config: any = {
       type: 'bar',
       data: {
         labels: ['Skyline Towers', 'Metro Plaza', 'City Hospital', 'Bridge Construction', 'School Building'],
@@ -48,7 +48,7 @@ export class BudgetChart implements AfterViewInit {
           y: {
             beginAtZero: true,
             ticks: {
-              callback: (value) => '$' + value + 'M'
+              callback: (value: any) => '$' + value + 'M'
             },
             grid: {
               display: true,
@@ -72,7 +72,7 @@ export class BudgetChart implements AfterViewInit {
           },
           tooltip: {
             callbacks: {
-              label: (context) => context.dataset.label + ': $' + context.parsed.y + 'M'
+              label: (context: any) => context.dataset.label + ': $' + context.parsed.y + 'M'
             }
           }
         }

@@ -6,10 +6,10 @@
     <div class="tasks-grid">
       <div class="task-item" *ngFor="let task of tasks">
         <div class="task-status" [style.background]="getColorForStatus(task.status)">
-          {{ task.status | titlecase | replace: '-': ' ' }}
+          {{ getStatusLabel(task.status) }}
         </div>
         <div class="task-count">{{ task.count }}</div>
       </div>
     </div>
   </div>
-</div></p>
+</div>

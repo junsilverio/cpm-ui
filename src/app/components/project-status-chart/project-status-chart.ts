@@ -1,8 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Chart, ChartConfiguration, registerables } from 'chart.js';
+import { Chart, ChartConfiguration, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js';
 
-Chart.register(...registerables);
+Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
 
 @Component({
   selector: 'app-project-status-chart',
@@ -22,7 +22,7 @@ export class ProjectStatusChart implements AfterViewInit {
     const ctx = this.chartCanvas.nativeElement.getContext('2d');
     if (!ctx) return;
 
-    const config: ChartConfiguration = {
+    const config: any = {
       type: 'doughnut',
       data: {
         labels: ['On Track', 'At Risk', 'Delayed', 'Completed'],
@@ -42,10 +42,10 @@ export class ProjectStatusChart implements AfterViewInit {
           },
           tooltip: {
             callbacks: {
-              label: (context) => {
+              label: (context: any) => {
                 const label = context.label || '';
                 const value = context.parsed || 0;
-                const total = (context.dataset.data as number[]).reduce((a, b) => a + b, 0);
+                const total = (context.dataset.data as number[]).reduce((a: number, b: number) => a + b, 0);
                 const percentage = Math.round((value / total) * 100);
                 return `${label}: ${value} (${percentage}%)`;
               }
@@ -55,7 +55,7 @@ export class ProjectStatusChart implements AfterViewInit {
       },
       plugins: [{
         id: 'centerText',
-        beforeDraw: (chart) => {
+        beforeDraw: (chart: any) => {
           const ctx = chart.ctx;
           ctx.save();
           const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
